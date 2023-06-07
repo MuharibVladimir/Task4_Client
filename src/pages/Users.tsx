@@ -9,6 +9,7 @@ import {
 } from "../services/UserService";
 import { ColumnsType } from "antd/es/table";
 import { DeleteOutlined } from "@ant-design/icons";
+import moment from "moment";
 
 const Users = () => {
   const { data, isLoading, error } = useGetUsersQuery(5);
@@ -35,10 +36,16 @@ const Users = () => {
     {
       title: "Date of registration",
       dataIndex: "registerDate",
+      render: (_: any, record) => {
+        return <p>{moment(record.registerDate).locale("ru").format("LLL")}</p>;
+      },
     },
     {
       title: "Date of last login",
       dataIndex: "lastLoginDate",
+      render: (_: any, record) => {
+        return <p>{moment(record.lastLoginDate).locale("ru").format("LLL")}</p>;
+      },
     },
     {
       title: "Status",
