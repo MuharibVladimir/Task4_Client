@@ -9,7 +9,7 @@ import { authSlice } from "./slices/AuthSlice";
 import { IToken } from "../models/IToken";
 import { Navigate, useNavigate } from "react-router-dom";
 
-const baseUrl = `${process.env.REACT_APP_SERVER_ENDPOINT}/api/`;
+const baseUrl = `http://vladimirmuharib-001-site1.atempurl.com/api/`;
 
 // Create a new mutex
 const mutex = new Mutex();
